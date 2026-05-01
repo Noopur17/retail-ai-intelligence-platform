@@ -1,0 +1,51 @@
+product_id,product_name,brand,category,sub_category,price,rating,review_count,stock_status,tags,description,image_url
+1,Organic Whole Milk,FreshFarm,Groceries,Dairy,4.99,4.6,320,In Stock,milk|organic|dairy,Fresh organic whole milk,/static/images/milk.jpeg
+2,Almond Milk Unsweetened,FreshFarm,Groceries,Dairy,3.99,4.5,210,In Stock,almond|milk|dairy,Healthy almond milk alternative,/static/images/almond milk.jpeg
+3,Greek Yogurt,FreshFarm,Groceries,Dairy,5.49,4.7,180,In Stock,yogurt|protein|dairy,Rich and creamy greek yogurt,/static/images/greekyogurt.jpeg
+4,Cheddar Cheese Slices,FreshFarm,Groceries,Dairy,4.79,4.3,88,In Stock,cheese|dairy|snack,Cheddar cheese slices for sandwiches,/static/images/cheddarcheese.jpeg
+5,Orange Juice,FreshFarm,Groceries,Beverages,4.49,4.4,118,In Stock,juice|drink|citrus,Fresh orange juice,/static/images/orangejuice.jpeg
+6,Granola Bars,FreshFarm,Groceries,Snacks,5.49,4.2,102,In Stock,granola|snack|energy,Healthy granola snack bars,/static/images/granolabar.jpeg
+7,Trail Mix,FreshFarm,Groceries,Snacks,7.29,4.4,124,In Stock,nuts|snack|mix,Crunchy trail mix,/static/images/trailmix.jpeg
+8,Bluetooth Wireless Headphones,TechNova,Electronics,Audio,59.99,4.4,210,In Stock,headphones|audio|wireless,Wireless headphones,/static/images/bluetooth.jpeg
+9,Noise Cancelling Earbuds,TechNova,Electronics,Audio,89.99,4.5,198,In Stock,earbuds|audio|noise,Noise cancelling earbuds,/static/images/earbuds.jpeg
+10,Smart LED TV 40 inch,TechNova,Electronics,TV,299.99,4.4,310,In Stock,tv|display|smart,Smart LED TV,/static/images/smarttv.jpeg
+11,4K Streaming Stick,TechNova,Electronics,TV,49.99,4.4,176,In Stock,streaming|tv|media,Streaming stick device,/static/images/stickwireless.jpeg
+12,Wireless Mouse,TechNova,Electronics,Accessories,18.99,4.3,205,In Stock,mouse|wireless|device,Wireless mouse,/static/images/mouse.jpeg
+13,Mechanical Keyboard,TechNova,Electronics,Accessories,79.99,4.6,280,In Stock,keyboard|mechanical|typing,Mechanical keyboard,/static/images/keyboard.jpeg
+14,Vacuum Cleaner,HomeEase,Home & Kitchen,Appliances,129.99,4.5,233,In Stock,vacuum|cleaning|home,Vacuum cleaner,/static/images/vacuumCleaner.jpeg
+15,Blender Mixer,HomeEase,Home & Kitchen,Appliances,49.99,4.3,170,In Stock,blender|kitchen|appliance,Blender mixer,/static/images/mixer.jpeg
+16,Microwave Oven,HomeEase,Home & Kitchen,Appliances,129.99,4.5,201,In Stock,microwave|kitchen|appliance,Microwave oven,/static/images/microwave.jpeg
+17,Air Fryer,HomeEase,Home & Kitchen,Appliances,89.99,4.6,240,In Stock,airfryer|kitchen|appliance,Air fryer,/static/images/airfryer.jpeg
+18,Electric Kettle,HomeEase,Home & Kitchen,Appliances,27.99,4.5,186,In Stock,kettle|boil|water,Electric kettle,/static/images/electricKettle.jpeg
+19,Non Stick Cooking Pan,HomeEase,Home & Kitchen,Cookware,24.99,4.5,180,In Stock,pan|cookware|kitchen,Non stick pan,/static/images/pan.jpeg
+20,Ceramic Dinner Set,HomeEase,Home & Kitchen,Dining,42.99,4.5,122,In Stock,dinner|plates|set,Ceramic dinner set,/static/images/dinnerset.jpeg
+21,Cotton Casual T Shirt,UrbanWear,Clothing,Apparel,12.99,4.2,150,In Stock,tshirt|cotton|casual,Cotton t shirt,/static/images/cottonTshirt.jpeg
+22,Denim Jeans,UrbanWear,Clothing,Apparel,39.99,4.2,200,In Stock,jeans|denim|fashion,Denim jeans,https://images.unsplash.com/photo-1541099649105-f69ad21f3246
+23,Hooded Sweatshirt,UrbanWear,Clothing,Apparel,29.99,4.5,220,In Stock,hoodie|casual|wear,Hooded sweatshirt,https://images.unsplash.com/photo-1554568218-0f1715e72254
+24,Puffer Jacket,UrbanWear,Clothing,Outerwear,69.99,4.5,130,In Stock,jacket|winter|wear,Puffer jacket,https://images.unsplash.com/photo-1517841905240-472988babdf9
+25,Slim Fit Polo Shirt,UrbanWear,Clothing,Apparel,22.99,4.2,116,In Stock,polo|shirt|casual,Polo shirt,https://images.unsplash.com/photo-1521334884684-d80222895322
+26,Cargo Shorts,UrbanWear,Clothing,Apparel,26.99,4.1,109,In Stock,shorts|cargo|casual,Cargo shorts,https://images.unsplash.com/photo-1521334884684-d80222895322
+27,Laptop Backpack,UrbanWear,Accessories,Bags,34.99,4.5,220,In Stock,bag|backpack|travel,Laptop backpack,https://images.unsplash.com/photo-1581605405669-fcdf81165afa
+28,Running Shoes,ActivePro,Sports & Outdoors,Footwear,79.99,4.6,260,In Stock,shoes|running|fitness,Running shoes,https://images.unsplash.com/photo-1542291026-7eec264c27ff
+29,Yoga Mat,ActivePro,Sports & Outdoors,Fitness,19.99,4.5,145,In Stock,yoga|fitness|mat,Yoga mat,https://images.unsplash.com/photo-1599058917765-a780eda07a3e
+30,Dumbbell Set,ActivePro,Sports & Outdoors,Fitness,54.99,4.5,190,In Stock,weights|fitness|gym,Dumbbell set,https://images.unsplash.com/photo-1517960413843-0aee8e2b3285
+31,Resistance Bands,ActivePro,Sports & Outdoors,Fitness,15.99,4.3,132,In Stock,bands|fitness|stretch,Resistance bands,https://images.unsplash.com/photo-1517960413843-0aee8e2b3285
+32,Gym Duffel Bag,ActivePro,Sports & Outdoors,Accessories,32.99,4.5,170,In Stock,bag|gym|duffel,Gym bag,https://images.unsplash.com/photo-1581605405669-fcdf81165afa
+33,Camping Water Bottle,ActivePro,Sports & Outdoors,Accessories,13.99,4.4,121,In Stock,bottle|outdoor|camp,Water bottle,https://images.unsplash.com/photo-1526403225-4fbe3d7d5c62
+34,Exercise Foam Roller,ActivePro,Sports & Outdoors,Fitness,24.49,4.3,111,In Stock,roller|fitness|recovery,Foam roller,https://images.unsplash.com/photo-1517960413843-0aee8e2b3285
+35,Vitamin C Tablets,PureCare,Personal Care,Supplements,9.99,4.3,95,In Stock,vitamin|health|immune,Vitamin C tablets,https://images.unsplash.com/photo-1582719471384-894fbb16e074
+36,Face Moisturizer,PureCare,Personal Care,Skincare,14.99,4.5,160,In Stock,cream|skin|care,Face moisturizer,https://images.unsplash.com/photo-1556228720-195a672e8a03
+37,Body Lotion,PureCare,Personal Care,Skincare,11.99,4.4,143,In Stock,lotion|skin|care,Body lotion,https://images.unsplash.com/photo-1556228720-195a672e8a03
+38,Face Wash Cleanser,PureCare,Personal Care,Skincare,10.99,4.4,128,In Stock,cleanser|face|wash,Face wash,https://images.unsplash.com/photo-1556228720-195a672e8a03
+39,Herbal Shampoo,PureCare,Personal Care,Haircare,8.99,4.2,105,In Stock,shampoo|hair|care,Herbal shampoo,https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9
+40,Hand Sanitizer Gel,PureCare,Personal Care,Wellness,4.99,4.1,96,In Stock,sanitizer|clean|care,Hand sanitizer,https://images.unsplash.com/photo-1588776814546-1ffcf47267a5
+41,Desk Lamp,HomeEase,Home & Kitchen,Lighting,18.99,4.3,130,In Stock,lamp|light|desk,Desk lamp,https://images.unsplash.com/photo-1507477338202-487281e6c27e
+42,Storage Container Set,HomeEase,Home & Kitchen,Storage,21.99,4.3,119,In Stock,storage|kitchen|box,Storage containers,https://images.unsplash.com/photo-1600585154340-be6161a56a0c
+43,Toothpaste Twin Pack,PureCare,Personal Care,Oral Care,6.99,4.3,112,In Stock,toothpaste|oral|care,Toothpaste pack,https://images.unsplash.com/photo-1606813907291-d86efa9b94db
+44,Protein Powder,FitFuel,Health,Supplements,29.99,4.6,180,In Stock,protein|fitness|health,Protein powder,https://images.unsplash.com/photo-1600891964599-f61ba0e24092
+45,Oatmeal Breakfast Cups,FreshFarm,Groceries,Breakfast,5.99,4.2,90,In Stock,oatmeal|breakfast|cup,Oatmeal cups,https://images.unsplash.com/photo-1584270354949-1d1e8b2c8f3c
+46,Smartphone Stand,TechNova,Electronics,Accessories,9.99,4.2,110,In Stock,stand|phone|holder,Phone stand,https://images.unsplash.com/photo-1510557880182-3f8c4e0a7c0d
+47,USB-C Charging Cable,TechNova,Electronics,Accessories,12.49,4.4,260,In Stock,cable|charger|usb,Charging cable,https://images.unsplash.com/photo-1587829741301-dc798b83add3
+48,Tablet 10 inch,TechNova,Electronics,Tablets,199.99,4.4,214,In Stock,tablet|device|screen,Tablet device,https://images.unsplash.com/photo-1517336714731-489689fd1ca8
+49,Orange Juice Bottle,FreshFarm,Groceries,Beverages,4.49,4.4,118,In Stock,juice|drink|orange,Orange juice bottle,https://images.unsplash.com/photo-1577805947697-89e18249d767
+50,Whole Wheat Bread,FreshFarm,Groceries,Bakery,3.99,4.3,110,In Stock,bread|bakery|wheat,Whole wheat bread,https://images.unsplash.com/photo-1608198093002-ad4e005484ec

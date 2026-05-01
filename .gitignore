@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.pyc
+venv/
+.venv/
+*.egg-info/
+
+# Node
+node_modules/
+frontend/node_modules/
+frontend/dist/
+
+# Environment
+.env
+.env.*
+
+# OS
+.DS_Store
+
+# Models / generated artifacts
+models/
+**/models/*.pkl
+**/models/*.joblib
+
+# Logs
+*.log
