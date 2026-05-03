@@ -25,8 +25,9 @@ This project demonstrates how AI can be applied across the **entire retail lifec
 - Similarity-based ranking
 - Category-aware filtering
 
-### 🔹 Content Intelligence Service *(In Progress)*
+### 🔹 Content Intelligence Service ✅
 - AI-generated product titles and descriptions
+- Bullet points and structured product content
 - SEO metadata generation
 
 ### 🔹 Customer Analytics Service *(In Progress)*
@@ -60,24 +61,29 @@ Datasets + ML Models + Retail Knowledge Base
 
 ## 🖼️ Demo Screenshots
 
-### 🛒 Retail AI Dashboard  
+### 🛒 Retail AI Dashboard
+
 Production-inspired interface for retail intelligence systems
 
 ![Dashboard](docs/screenshots/dashboard.png)
 
 ---
 
-### 🤖 AI Recommendation Engine (Live Results)  
+### 🤖 AI Recommendation Engine (Live Results)
+
 Real-time product recommendations with ranking and similarity scoring
 
-![Recommendations](docs/screenshots/recommendation.png)
+![Recommendations](docs/screenshots/recommendations.png)
 
 ---
 
-### ⚙️ Backend API (Swagger)  
+### ⚙️ Backend API (Swagger)
+
 FastAPI-powered recommendation service with interactive API documentation
 
 ![Swagger](docs/screenshots/swagger.png)
+
+---
 
 ## 🛠️ Tech Stack
 
@@ -91,34 +97,35 @@ FastAPI-powered recommendation service with interactive API documentation
 
 ## 📊 Dataset Connection
 
-This platform is designed to work with **retail product catalog datasets** and customer behavior data to power intelligent recommendations.
+This platform is designed to work with **large-scale retail datasets across multiple categories such as grocery, electronics, fashion, and home goods**, similar to enterprise commerce platforms.
 
 ### Current Data Used
 
-- Product Catalog Dataset (sample included)
-- Features:
-  - product_id
-  - product_name
-  - brand
-  - category
-  - sub_category
-  - price
-  - rating
-  - stock_status
-  - tags
-  - description
+* Product Catalog Dataset (sample included)
+* Features:
+
+  * product_id
+  * product_name
+  * brand
+  * category
+  * sub_category
+  * price
+  * rating
+  * stock_status
+  * tags
+  * description
 
 ### How Data is Used
 
-- Recommendation engine uses **content-based similarity**
-- Filters by **category and sub-category**
-- Ranks products using similarity scoring
+* Recommendation engine uses **content-based similarity**
+* Filters by **category and sub-category**
+* Ranks products using similarity scoring
 
 ### Kaggle Profile
 
-Explore full datasets and future releases:
+👉 [https://www.kaggle.com/noopurbhatt](https://www.kaggle.com/noopurbhatt)
 
-👉 https://www.kaggle.com/noopurbhatt
+---
 
 ## 📂 Project Structure
 
@@ -140,22 +147,35 @@ retail-ai-intelligence-platform/
 
 ## 🔌 API Documentation (Swagger)
 
-Run the recommendation service and open:
+### Recommendation Service
 
 ```text
 http://127.0.0.1:8001/docs
 ```
 
-### Available Endpoints:
+### Content Intelligence Service
 
-* `GET /health` → Health check
-* `GET /products` → Retrieve product catalog
-* `GET /recommendations/{product_id}` → Get ranked recommendations
-* `POST /content/generate` → Generate product title, descriptions, bullets, and SEO metadata
+```text
+http://127.0.0.1:8002/docs
+```
 
 ---
 
-## 📊 API Example
+### Available Endpoints
+
+#### Recommendation Service
+
+* `GET /health` → Health check
+* `GET /products` → Product catalog
+* `GET /recommendations/{product_id}` → Ranked recommendations
+
+#### Content Intelligence Service
+
+* `POST /content/generate` → Generate product title, descriptions, bullet points, and SEO metadata
+
+---
+
+## 📊 API Example (Recommendation)
 
 ### Request
 
@@ -198,7 +218,9 @@ GET /recommendations/1?top_k=5
 
 ---
 
-## 🧪 How to Run (Recommendation Service)
+## 🧪 How to Run
+
+### Recommendation Service
 
 ```bash
 cd services/recommendation-service
@@ -209,6 +231,21 @@ source venv/bin/activate
 pip install -r requirements.txt
 
 uvicorn app.main:app --reload --port 8001
+```
+
+---
+
+### Content Intelligence Service
+
+```bash
+cd services/content-intelligence-service
+
+python3 -m venv venv
+source venv/bin/activate
+
+pip install -r requirements.txt
+
+uvicorn app.main:app --reload --port 8002
 ```
 
 ---
@@ -228,9 +265,10 @@ This project supports research in:
 
 * [x] Recommendation Engine API
 * [x] Swagger API Documentation
+* [x] Premium Dashboard UI
 * [x] Content Intelligence Service MVP
 * [ ] Customer Analytics Service
-* [ ] Frontend Dashboard Integration
+* [ ] Full Frontend Integration (Content AI)
 * [ ] Dockerized Full Platform
 * [ ] Kaggle Dataset Integration
 * [ ] End-to-End Demo
