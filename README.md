@@ -151,6 +151,7 @@ http://127.0.0.1:8001/docs
 * `GET /health` → Health check
 * `GET /products` → Retrieve product catalog
 * `GET /recommendations/{product_id}` → Get ranked recommendations
+* `POST /content/generate` → Generate product title, descriptions, bullets, and SEO metadata
 
 ---
 
@@ -227,7 +228,7 @@ This project supports research in:
 
 * [x] Recommendation Engine API
 * [x] Swagger API Documentation
-* [ ] Content Intelligence Service
+* [x] Content Intelligence Service MVP
 * [ ] Customer Analytics Service
 * [ ] Frontend Dashboard Integration
 * [ ] Dockerized Full Platform
