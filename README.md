@@ -1,6 +1,6 @@
 # 🛒 Retail AI Intelligence Platform
 
-A production-inspired AI platform for retail intelligence, combining **product recommendations, AI-powered content generation, customer analytics, and operational intelligence** into one modular full-stack system.
+A production-inspired AI platform for retail intelligence, designed for large-scale commerce environments including grocery, electronics, fashion, and general merchandise.
 
 ---
 
