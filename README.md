@@ -194,5 +194,3 @@ AI & Full-Stack Engineer specializing in **Retail Intelligence Systems, Personal
 ## ⭐ Future Vision
 
 This platform aims to evolve into a **production-scale retail intelligence system**, demonstrating how AI can power modern commerce platforms end-to-end.
-
-````
