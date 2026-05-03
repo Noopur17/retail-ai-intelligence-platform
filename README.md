@@ -1,58 +1,77 @@
-# Retail AI Intelligence Platform
+# 🛒 Retail AI Intelligence Platform
 
-A production-inspired AI platform for retail intelligence, combining recommendation systems, AI-powered content generation, customer analytics, and operational intelligence into one modular full-stack system.
+A production-inspired AI platform for retail intelligence, combining **product recommendations, AI-powered content generation, customer analytics, and operational intelligence** into one modular full-stack system.
 
-## Why This Project Matters
+---
 
-Modern retail platforms need more than isolated machine learning models. They need intelligent systems that can understand customer behavior, recommend relevant products, generate high-quality product content, and provide business insights at scale.
+## 🚀 Why This Project Matters
 
-This project demonstrates how AI can be applied across the retail lifecycle — from product discovery to content intelligence and decision support.
+Modern retail systems require more than isolated machine learning models.
 
-## Core Modules
+They need **end-to-end intelligent platforms** that can:
+- Understand customer behavior
+- Recommend relevant products
+- Generate high-quality product content
+- Provide actionable business insights
 
-### 1. Recommendation Service
-Provides product recommendations using product metadata, similarity scoring, and ranking logic.
+This project demonstrates how AI can be applied across the **entire retail lifecycle**.
 
-### 2. Content Intelligence Service
-Generates and structures retail product content such as titles, descriptions, bullet points, and SEO metadata.
+---
 
-### 3. Customer Analytics Service
-Analyzes customer behavior patterns, segmentation signals, and retail performance metrics.
+## 🧠 Core Modules
 
-### 4. Unified Retail Dashboard
-A React-based frontend dashboard for exploring recommendations, analytics, and AI-generated content.
+### 🔹 Recommendation Service
+- Content-based recommendation engine
+- Similarity-based ranking
+- Category-aware filtering
 
-## Architecture
+### 🔹 Content Intelligence Service *(In Progress)*
+- AI-generated product titles and descriptions
+- SEO metadata generation
+
+### 🔹 Customer Analytics Service *(In Progress)*
+- Customer segmentation
+- Behavioral insights
+
+### 🔹 Log Intelligence Service *(Planned)*
+- Error detection
+- Operational insights
+
+---
+
+## 🏗️ Architecture
 
 ```text
-Frontend Dashboard
+Frontend (React Dashboard)
         |
         v
-API Gateway / Service Layer
+API Layer (FastAPI Services)
         |
-        |-- Recommendation Service
-        |-- Content Intelligence Service
-        |-- Customer Analytics Service
-        |-- Log Intelligence Service
+        ├── Recommendation Service
+        ├── Content Intelligence Service
+        ├── Customer Analytics Service
+        └── Log Intelligence Service
         |
         v
-Datasets / Models / Retail Knowledge Base
+Datasets + ML Models + Retail Knowledge Base
 ````
 
-## Tech Stack
+---
 
-* Frontend: React, TypeScript, Vite
-* Backend: Python, FastAPI
-* Data/ML: Pandas, Scikit-learn
-* Deployment: Docker, Docker Compose
-* Domain: Retail AI, personalization, content intelligence, analytics
+## 🛠️ Tech Stack
 
-## Project Structure
+* **Frontend:** React, TypeScript, Vite
+* **Backend:** FastAPI (Python)
+* **ML/Data:** Pandas, Scikit-learn
+* **Deployment:** Docker, Docker Compose
+* **Domain:** Retail AI, Personalization, Content Intelligence
+
+---
+
+## 📂 Project Structure
 
 ```text
 retail-ai-intelligence-platform/
-├── README.md
-├── docker-compose.yml
 ├── docs/
 ├── frontend/
 ├── services/
@@ -65,31 +84,117 @@ retail-ai-intelligence-platform/
 └── scripts/
 ```
 
-## Research Alignment
+---
 
-This project supports ongoing research in AI-driven retail systems, including:
+## 🔌 API Documentation (Swagger)
 
-* Retail product recommendation systems
-* AI-powered content generation
-* Customer behavior analytics
-* Scalable retail data management
-* Intelligent decision-support systems for commerce
+Run the recommendation service and open:
 
-## Roadmap
+```text
+http://127.0.0.1:8001/docs
+```
 
-* [ ] Recommendation service MVP
-* [ ] Content intelligence service MVP
-* [ ] Customer analytics service MVP
-* [ ] React dashboard integration
-* [ ] Docker Compose local deployment
-* [ ] Kaggle dataset integration
-* [ ] Research paper implementation examples
-* [ ] Public demo screenshots and walkthrough
+### Available Endpoints:
 
-## Author
+* `GET /health` → Health check
+* `GET /products` → Retrieve product catalog
+* `GET /recommendations/{product_id}` → Get ranked recommendations
 
-Noopur Bhatt
-Full-Stack Engineer focused on AI Retail Intelligence Systems, personalization, content platforms, and scalable AI applications.
+---
+
+## 📊 API Example
+
+### Request
+
+```http
+GET /recommendations/1?top_k=5
+```
+
+### Response
+
+```json
+{
+  "query": {
+    "product_id": 1,
+    "top_k": 5
+  },
+  "source_product": {
+    "product_id": 1,
+    "product_name": "Sample Product",
+    "brand": "BrandX",
+    "category": "Electronics",
+    "sub_category": "Headphones"
+  },
+  "recommendation_count": 5,
+  "recommendations": [
+    {
+      "rank": 1,
+      "product_id": 7,
+      "product_name": "Wireless Headphones",
+      "brand": "BrandY",
+      "category": "Electronics",
+      "sub_category": "Headphones",
+      "price": 59.99,
+      "rating": 4.5,
+      "stock_status": "In Stock",
+      "similarity_score": 0.8123
+    }
+  ]
+}
+```
+
+---
+
+## 🧪 How to Run (Recommendation Service)
+
+```bash
+cd services/recommendation-service
+
+python3 -m venv venv
+source venv/bin/activate
+
+pip install -r requirements.txt
+
+uvicorn app.main:app --reload --port 8001
+```
+
+---
+
+## 🔬 Research Alignment
+
+This project supports research in:
+
+* Retail Recommendation Systems
+* AI-powered Content Generation
+* Customer Behavior Analytics
+* Scalable Retail Intelligence Platforms
+
+---
+
+## 🛣️ Roadmap
+
+* [x] Recommendation Engine API
+* [x] Swagger API Documentation
+* [ ] Content Intelligence Service
+* [ ] Customer Analytics Service
+* [ ] Frontend Dashboard Integration
+* [ ] Dockerized Full Platform
+* [ ] Kaggle Dataset Integration
+* [ ] End-to-End Demo
+
+---
+
+## 👩‍💻 Author
+
+**Noopur Bhatt**
+AI & Full-Stack Engineer specializing in **Retail Intelligence Systems, Personalization, and Scalable AI Platforms**
+
+---
+
+## ⭐ Future Vision
+
+This platform aims to evolve into a **production-scale retail intelligence system**, demonstrating how AI can power modern commerce platforms end-to-end.
 
 ````
 
+---
