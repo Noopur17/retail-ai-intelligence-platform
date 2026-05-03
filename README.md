@@ -58,6 +58,27 @@ Datasets + ML Models + Retail Knowledge Base
 
 ---
 
+## 🖼️ Demo Screenshots
+
+### 🛒 Retail AI Dashboard  
+Production-inspired interface for retail intelligence systems
+
+![Dashboard](docs/screenshots/dashboard.png)
+
+---
+
+### 🤖 AI Recommendation Engine (Live Results)  
+Real-time product recommendations with ranking and similarity scoring
+
+![Recommendations](docs/screenshots/recommendation.png)
+
+---
+
+### ⚙️ Backend API (Swagger)  
+FastAPI-powered recommendation service with interactive API documentation
+
+![Swagger](docs/screenshots/swagger.png)
+
 ## 🛠️ Tech Stack
 
 * **Frontend:** React, TypeScript, Vite
