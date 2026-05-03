@@ -89,6 +89,37 @@ FastAPI-powered recommendation service with interactive API documentation
 
 ---
 
+## 📊 Dataset Connection
+
+This platform is designed to work with **retail product catalog datasets** and customer behavior data to power intelligent recommendations.
+
+### Current Data Used
+
+- Product Catalog Dataset (sample included)
+- Features:
+  - product_id
+  - product_name
+  - brand
+  - category
+  - sub_category
+  - price
+  - rating
+  - stock_status
+  - tags
+  - description
+
+### How Data is Used
+
+- Recommendation engine uses **content-based similarity**
+- Filters by **category and sub-category**
+- Ranks products using similarity scoring
+
+### Kaggle Profile
+
+Explore full datasets and future releases:
+
+👉 https://www.kaggle.com/noopurbhatt
+
 ## 📂 Project Structure
 
 ```text
