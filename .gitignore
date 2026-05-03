@@ -18,9 +18,11 @@ frontend/dist/
 .DS_Store
 
 # Models / generated artifacts
-models/
 **/models/*.pkl
 **/models/*.joblib
+
+# Keep empty model folders
+!**/models/.gitkeep
 
 # Logs
 *.log
