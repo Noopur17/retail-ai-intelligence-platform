@@ -1,0 +1,24 @@
+services:
+  recommendation-service:
+    build:
+      context: ./services/recommendation-service
+    container_name: retail-recommendation-service
+    ports:
+      - "8001:8000"
+
+  content-intelligence-service:
+    build:
+      context: ./services/content-intelligence-service
+    container_name: retail-content-intelligence-service
+    ports:
+      - "8002:8000"
+
+  frontend:
+    build:
+      context: ./frontend/frontend
+    container_name: retail-ai-frontend
+    ports:
+      - "5173:5173"
+    depends_on:
+      - recommendation-service
+      - content-intelligence-service

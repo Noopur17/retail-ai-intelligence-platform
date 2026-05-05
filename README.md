@@ -18,25 +18,45 @@ This project demonstrates how AI can be applied across the **entire retail lifec
 
 ---
 
+## 🚀 Quick Start (Docker)
+
+Run the full platform:
+
+```bash
+docker compose up --build
+````
+
+Open:
+
+* UI → [http://localhost:5173](http://localhost:5173)
+* Recommendation API → [http://localhost:8001/docs](http://localhost:8001/docs)
+* Content Intelligence API → [http://localhost:8002/docs](http://localhost:8002/docs)
+
+---
+
 ## 🧠 Core Modules
 
 ### 🔹 Recommendation Service
-- Content-based recommendation engine
-- Similarity-based ranking
-- Category-aware filtering
+
+* Content-based recommendation engine
+* Similarity-based ranking
+* Category-aware filtering
 
 ### 🔹 Content Intelligence Service ✅
-- AI-generated product titles and descriptions
-- Bullet points and structured product content
-- SEO metadata generation
+
+* AI-generated product titles and descriptions
+* Bullet points and structured product content
+* SEO metadata generation
 
 ### 🔹 Customer Analytics Service *(In Progress)*
-- Customer segmentation
-- Behavioral insights
+
+* Customer segmentation
+* Behavioral insights
 
 ### 🔹 Log Intelligence Service *(Planned)*
-- Error detection
-- Operational insights
+
+* Error detection
+* Operational insights
 
 ---
 
@@ -55,7 +75,7 @@ API Layer (FastAPI Services)
         |
         v
 Datasets + ML Models + Retail Knowledge Base
-````
+```
 
 ---
 
@@ -63,38 +83,33 @@ Datasets + ML Models + Retail Knowledge Base
 
 ### 🛒 Retail AI Dashboard
 
-Production-inspired interface for retail intelligence systems
-
 ![Dashboard](docs/screenshots/dashboard.png)
 
 ---
 
-### 🤖 AI Recommendation Engine (Live Results)
-
-Real-time product recommendations with ranking and similarity scoring
+### 🤖 AI Recommendation Engine
 
 ![Recommendations](docs/screenshots/recommendations.png)
 
 ---
 
-### ⚙️ Backend API (Swagger)
+### 🧠 Content Intelligence Service
 
-FastAPI-powered recommendation service with interactive API documentation
-
-![Swagger](docs/screenshots/swagger.png)
-
----
-
-### 🧠 Content Intelligence Service  
 AI-generated retail product content with titles, descriptions, bullet points, and SEO metadata.
 
 ![Content AI](docs/screenshots/content-ai.png)
 
 ---
 
+### ⚙️ Backend API (Swagger)
+
+![Swagger](docs/screenshots/swagger.png)
+
+---
+
 ## 🛠️ Tech Stack
 
-* **Frontend:** React, TypeScript, Vite
+* **Frontend:** React, Vite
 * **Backend:** FastAPI (Python)
 * **ML/Data:** Pandas, Scikit-learn
 * **Deployment:** Docker, Docker Compose
@@ -104,33 +119,35 @@ AI-generated retail product content with titles, descriptions, bullet points, an
 
 ## 📊 Dataset Connection
 
-This platform is designed to work with **large-scale retail datasets across multiple categories such as grocery, electronics, fashion, and home goods**, similar to enterprise commerce platforms.
+This platform is designed for **multi-category retail systems (Walmart-style datasets)** including:
+
+* Grocery
+* Electronics
+* Fashion
+* Home
 
 ### Current Data Used
 
-* Product Catalog Dataset (sample included)
-* Features:
+* Product Catalog Dataset (sample)
 
-  * product_id
-  * product_name
-  * brand
-  * category
-  * sub_category
-  * price
-  * rating
-  * stock_status
-  * tags
-  * description
+### Features
+
+* product_id
+* product_name
+* brand
+* category
+* sub_category
+* price
+* rating
+* stock_status
+* tags
+* description
 
 ### How Data is Used
 
-* Recommendation engine uses **content-based similarity**
-* Filters by **category and sub-category**
-* Ranks products using similarity scoring
-
-### Kaggle Profile
-
-👉 [https://www.kaggle.com/noopurbhatt](https://www.kaggle.com/noopurbhatt)
+* Content-based similarity model
+* Category-aware filtering
+* Ranked recommendation scoring
 
 ---
 
@@ -139,6 +156,7 @@ This platform is designed to work with **large-scale retail datasets across mult
 ```text
 retail-ai-intelligence-platform/
 ├── docs/
+│   └── screenshots/
 ├── frontend/
 ├── services/
 │   ├── recommendation-service/
@@ -147,38 +165,24 @@ retail-ai-intelligence-platform/
 │   └── log-intelligence-service/
 ├── datasets/
 ├── notebooks/
-└── scripts/
+└── docker-compose.yml
 ```
 
 ---
 
-## 🔌 API Documentation (Swagger)
+## 🔌 API Documentation
 
 ### Recommendation Service
 
-```text
-http://127.0.0.1:8001/docs
+```
+http://localhost:8001/docs
 ```
 
 ### Content Intelligence Service
 
-```text
-http://127.0.0.1:8002/docs
 ```
-
----
-
-### Available Endpoints
-
-#### Recommendation Service
-
-* `GET /health` → Health check
-* `GET /products` → Product catalog
-* `GET /recommendations/{product_id}` → Ranked recommendations
-
-#### Content Intelligence Service
-
-* `POST /content/generate` → Generate product title, descriptions, bullet points, and SEO metadata
+http://localhost:8002/docs
+```
 
 ---
 
@@ -194,30 +198,14 @@ GET /recommendations/1?top_k=5
 
 ```json
 {
-  "query": {
-    "product_id": 1,
-    "top_k": 5
-  },
   "source_product": {
-    "product_id": 1,
     "product_name": "Sample Product",
-    "brand": "BrandX",
-    "category": "Electronics",
-    "sub_category": "Headphones"
+    "category": "Electronics"
   },
-  "recommendation_count": 5,
   "recommendations": [
     {
-      "rank": 1,
-      "product_id": 7,
       "product_name": "Wireless Headphones",
-      "brand": "BrandY",
-      "category": "Electronics",
-      "sub_category": "Headphones",
-      "price": 59.99,
-      "rating": 4.5,
-      "stock_status": "In Stock",
-      "similarity_score": 0.8123
+      "similarity_score": 0.81
     }
   ]
 }
@@ -225,34 +213,28 @@ GET /recommendations/1?top_k=5
 
 ---
 
-## 🧪 How to Run
+## 🧪 Local Development (Optional)
 
 ### Recommendation Service
 
 ```bash
 cd services/recommendation-service
-
-python3 -m venv venv
-source venv/bin/activate
-
-pip install -r requirements.txt
-
 uvicorn app.main:app --reload --port 8001
 ```
-
----
 
 ### Content Intelligence Service
 
 ```bash
 cd services/content-intelligence-service
-
-python3 -m venv venv
-source venv/bin/activate
-
-pip install -r requirements.txt
-
 uvicorn app.main:app --reload --port 8002
+```
+
+### Frontend
+
+```bash
+cd frontend/frontend
+npm install
+npm run dev
 ```
 
 ---
@@ -274,11 +256,11 @@ This project supports research in:
 * [x] Swagger API Documentation
 * [x] Premium Dashboard UI
 * [x] Content Intelligence Service MVP
+* [x] Dockerized Full Platform
 * [ ] Customer Analytics Service
-* [ ] Full Frontend Integration (Content AI)
-* [ ] Dockerized Full Platform
-* [ ] Kaggle Dataset Integration
-* [ ] End-to-End Demo
+* [ ] Cross-service Integration (Recommendation → Content AI)
+* [ ] Large-scale Dataset Integration
+* [ ] End-to-End Retail Simulation
 
 ---
 
