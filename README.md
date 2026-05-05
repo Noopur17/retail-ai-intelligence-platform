@@ -85,6 +85,13 @@ FastAPI-powered recommendation service with interactive API documentation
 
 ---
 
+### 🧠 Content Intelligence Service  
+AI-generated retail product content with titles, descriptions, bullet points, and SEO metadata.
+
+![Content AI](docs/screenshots/content-ai.png)
+
+---
+
 ## 🛠️ Tech Stack
 
 * **Frontend:** React, TypeScript, Vite

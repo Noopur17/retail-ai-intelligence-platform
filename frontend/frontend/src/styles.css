@@ -38,7 +38,7 @@ body {
   background: linear-gradient(135deg, #2563eb, #38bdf8);
   display: grid;
   place-items: center;
-  font-weight: 800;
+  font-weight: 900;
 }
 
 .brandBlock h2 {
@@ -58,17 +58,27 @@ nav {
   margin-top: 42px;
 }
 
-nav span {
+nav button {
   color: #94a3b8;
   padding: 12px 14px;
   border-radius: 14px;
-  font-weight: 600;
+  font-weight: 800;
+  background: transparent;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  font-size: 15px;
 }
 
-nav span.active {
+nav button.active {
   color: white;
   background: rgba(37, 99, 235, 0.18);
   border: 1px solid rgba(96, 165, 250, 0.25);
+}
+
+nav button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
 }
 
 .sidebarFooter {
@@ -112,7 +122,7 @@ nav span.active {
   text-transform: uppercase;
   font-size: 12px;
   letter-spacing: 0.14em;
-  font-weight: 800;
+  font-weight: 900;
 }
 
 .hero h1 {
@@ -122,7 +132,7 @@ nav span.active {
 }
 
 .hero p {
-  max-width: 760px;
+  max-width: 780px;
   color: #dbeafe;
   line-height: 1.7;
   font-size: 16px;
@@ -203,10 +213,10 @@ nav span.active {
   border: 1px solid #bfdbfe;
   padding: 12px 16px;
   border-radius: 14px;
-  font-weight: 800;
+  font-weight: 900;
 }
 
-/* Search */
+/* Recommendation Search */
 .searchBox {
   margin-top: 22px;
   display: flex;
@@ -228,7 +238,7 @@ nav span.active {
   color: white;
   border-radius: 16px;
   cursor: pointer;
-  font-weight: 800;
+  font-weight: 900;
   box-shadow: 0 12px 24px rgba(37, 99, 235, 0.22);
 }
 
@@ -237,7 +247,6 @@ nav span.active {
   cursor: not-allowed;
 }
 
-/* Source Product */
 .sourceProduct {
   margin-top: 22px;
   background: #f8fafc;
@@ -249,7 +258,7 @@ nav span.active {
 .sourceProduct span {
   color: #64748b;
   font-size: 13px;
-  font-weight: 800;
+  font-weight: 900;
   text-transform: uppercase;
 }
 
@@ -264,7 +273,6 @@ nav span.active {
   margin-bottom: 0;
 }
 
-/* Results */
 .resultsHeader {
   margin-top: 28px;
   display: flex;
@@ -328,7 +336,7 @@ nav span.active {
   border-radius: 999px;
   padding: 6px 10px;
   font-size: 12px;
-  font-weight: 800;
+  font-weight: 900;
 }
 
 .productCard h3 {
@@ -365,7 +373,7 @@ nav span.active {
   border-radius: 999px;
   padding: 7px 10px;
   font-size: 12px;
-  font-weight: 700;
+  font-weight: 800;
 }
 
 .cardBottom {
@@ -387,6 +395,131 @@ nav span.active {
   font-weight: 900;
 }
 
+/* Content AI */
+.enterpriseNotice {
+  margin-top: 22px;
+  background: #f8fafc;
+  border: 1px solid #dbeafe;
+  border-radius: 20px;
+  padding: 18px;
+}
+
+.enterpriseNotice strong {
+  color: #1e3a8a;
+}
+
+.enterpriseNotice p {
+  margin: 6px 0 0;
+  color: #64748b;
+}
+
+.contentGrid {
+  margin-top: 24px;
+  display: grid;
+  grid-template-columns: 420px 1fr;
+  gap: 24px;
+}
+
+.contentForm {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 24px;
+  padding: 22px;
+  display: grid;
+  gap: 12px;
+}
+
+.contentForm label {
+  font-weight: 900;
+  color: #334155;
+  font-size: 13px;
+}
+
+.contentForm input,
+.contentForm textarea,
+.contentForm select {
+  width: 100%;
+  border: 1px solid #cbd5e1;
+  border-radius: 14px;
+  padding: 14px;
+  font-size: 14px;
+  font-family: inherit;
+  background: white;
+}
+
+.contentForm textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.contentForm button {
+  margin-top: 8px;
+  padding: 15px 18px;
+  background: #2563eb;
+  border: none;
+  color: white;
+  border-radius: 16px;
+  cursor: pointer;
+  font-weight: 900;
+  box-shadow: 0 12px 24px rgba(37, 99, 235, 0.22);
+}
+
+.contentForm button:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.contentOutput {
+  display: grid;
+  gap: 14px;
+}
+
+.generatedBlock {
+  background: linear-gradient(180deg, #ffffff, #f8fafc);
+  border: 1px solid #e2e8f0;
+  border-radius: 22px;
+  padding: 20px;
+}
+
+.generatedBlock.primary {
+  border-color: #bfdbfe;
+  background: linear-gradient(180deg, #eff6ff, #ffffff);
+}
+
+.generatedBlock span {
+  display: block;
+  color: #2563eb;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 11px;
+  font-weight: 900;
+  margin-bottom: 8px;
+}
+
+.generatedBlock h3 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.generatedBlock p {
+  color: #475569;
+  line-height: 1.7;
+}
+
+.generatedBlock ul {
+  margin: 0;
+  padding-left: 20px;
+  color: #475569;
+  line-height: 1.8;
+}
+
+.emptyState.compact {
+  height: 100%;
+  display: grid;
+  place-content: center;
+}
+
+/* Responsive */
 @media (max-width: 1100px) {
   .layout {
     flex-direction: column;
@@ -399,6 +532,10 @@ nav span.active {
   .metrics,
   .results {
     grid-template-columns: 1fr 1fr;
+  }
+
+  .contentGrid {
+    grid-template-columns: 1fr;
   }
 }
 
