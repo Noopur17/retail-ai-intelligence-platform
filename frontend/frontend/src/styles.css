@@ -563,3 +563,18 @@ nav button:disabled {
     width: 100%;
   }
 }
+.contentActionButton {
+  width: 100%;
+  margin-top: 18px;
+  padding: 12px 14px;
+  border-radius: 14px;
+  border: 1px solid #bfdbfe;
+  background: #eff6ff;
+  color: #1d4ed8;
+  cursor: pointer;
+  font-weight: 900;
+}
+
+.contentActionButton:hover {
+  background: #dbeafe;
+}

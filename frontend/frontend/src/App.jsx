@@ -88,13 +88,17 @@ function App() {
     product_name: "Everyday Comfort Running Shoes",
     features:
       "lightweight design, breathable mesh, durable outsole, responsive cushioning",
+    mode: "template",
+    tone: "premium",
   });
 
   const [generatedContent, setGeneratedContent] = useState(null);
+  const [bulkContent, setBulkContent] = useState([]);
+  const [bulkLoading, setBulkLoading] = useState(false);
   const [loadingContent, setLoadingContent] = useState(false);
 
   const currentCategory = useMemo(
-    () => CATEGORY_OPTIONS[contentForm.category],
+    () => CATEGORY_OPTIONS[contentForm.category] || CATEGORY_OPTIONS.Footwear,
     [contentForm.category]
   );
 
@@ -106,6 +110,8 @@ function App() {
       brand: selected.brands[0],
       product_name: selected.products[0],
       features: selected.features.join(", "),
+      mode: contentForm.mode,
+      tone: contentForm.tone,
     });
 
     setGeneratedContent(null);
@@ -143,6 +149,8 @@ function App() {
         .split(",")
         .map((item) => item.trim())
         .filter(Boolean),
+      mode: contentForm.mode,
+      tone: contentForm.tone,
     };
 
     try {
@@ -162,6 +170,23 @@ function App() {
     }
 
     setLoadingContent(false);
+  };
+
+  const handleGenerateFromRecommendation = (item) => {
+    setActiveTab("content");
+
+    setContentForm({
+      category: item.category || "Electronics",
+      brand: item.brand || "RetailBrand",
+      product_name: item.product_name || "Recommended Product",
+      features:
+        item.tags?.split("|").join(", ") ||
+        `${item.category || "retail"} product, customer favorite, high quality`,
+      mode: "ai",
+      tone: "premium",
+    });
+
+    setGeneratedContent(null);
   };
 
   return (
@@ -318,6 +343,13 @@ function App() {
                     <strong>${item.price}</strong>
                     <span className="rating">★ {item.rating}</span>
                   </div>
+
+                  <button
+                    className="contentActionButton"
+                    onClick={() => handleGenerateFromRecommendation(item)}
+                  >
+                    Generate Content
+                  </button>
                 </article>
               ))}
             </div>
@@ -345,13 +377,38 @@ function App() {
             <div className="enterpriseNotice">
               <strong>Retail Catalog Workspace</strong>
               <p>
-                Select a category, brand, and product to generate structured
-                merchandising content for broad commerce use cases.
+                Select a category, brand, product, generation mode, and tone to
+                generate structured merchandising content.
               </p>
             </div>
 
             <div className="contentGrid">
               <div className="contentForm">
+                <label>Generation Mode</label>
+                <select
+                  value={contentForm.mode}
+                  onChange={(e) =>
+                    setContentForm({ ...contentForm, mode: e.target.value })
+                  }
+                >
+                  <option value="template">Template Mode - Fast / Free</option>
+                  <option value="ai">AI Mode - OpenAI Powered</option>
+                </select>
+
+                <label>Tone</label>
+                <select
+                  value={contentForm.tone}
+                  onChange={(e) =>
+                    setContentForm({ ...contentForm, tone: e.target.value })
+                  }
+                >
+                  <option value="premium">Premium</option>
+                  <option value="budget-friendly">Budget-Friendly</option>
+                  <option value="family-focused">Family-Focused</option>
+                  <option value="technical">Technical</option>
+                  <option value="simple">Simple</option>
+                </select>
+
                 <label>Retail Category</label>
                 <select
                   value={contentForm.category}
@@ -363,19 +420,15 @@ function App() {
                 </select>
 
                 <label>Brand</label>
-                <select
+                <input
                   value={contentForm.brand}
                   onChange={(e) =>
                     setContentForm({ ...contentForm, brand: e.target.value })
                   }
-                >
-                  {currentCategory.brands.map((brand) => (
-                    <option key={brand}>{brand}</option>
-                  ))}
-                </select>
+                />
 
                 <label>Product Name</label>
-                <select
+                <input
                   value={contentForm.product_name}
                   onChange={(e) =>
                     setContentForm({
@@ -383,11 +436,7 @@ function App() {
                       product_name: e.target.value,
                     })
                   }
-                >
-                  {currentCategory.products.map((product) => (
-                    <option key={product}>{product}</option>
-                  ))}
-                </select>
+                />
 
                 <label>Features</label>
                 <textarea
@@ -416,7 +465,9 @@ function App() {
                 {generatedContent && (
                   <>
                     <div className="generatedBlock primary">
-                      <span>Generated Title</span>
+                      <span>
+                        Generated Title • Mode: {generatedContent.mode_used}
+                      </span>
                       <h3>{generatedContent.title}</h3>
                     </div>
 

@@ -1,21 +1,20 @@
 services:
   recommendation-service:
-    build:
-      context: ./services/recommendation-service
+    image: noopur17/retail-recommendation-service:latest
     container_name: retail-recommendation-service
     ports:
       - "8001:8000"
 
   content-intelligence-service:
-    build:
-      context: ./services/content-intelligence-service
+    image: noopur17/retail-content-intelligence-service:latest
     container_name: retail-content-intelligence-service
     ports:
       - "8002:8000"
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
 
   frontend:
-    build:
-      context: ./frontend/frontend
+    image: noopur17/retail-ai-frontend:latest
     container_name: retail-ai-frontend
     ports:
       - "5173:5173"
