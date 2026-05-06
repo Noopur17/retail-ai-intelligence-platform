@@ -34,6 +34,16 @@ Open:
 
 ---
 
+## 🐳 Docker Hub Images
+
+This platform is published as three Docker images:
+
+- Frontend: https://hub.docker.com/r/noopur17/retail-ai-frontend
+- Recommendation Service: https://hub.docker.com/r/noopur17/retail-recommendation-service
+- Content Intelligence Service: https://hub.docker.com/r/noopur17/retail-content-intelligence-service
+
+---
+
 ## 🧠 Core Modules
 
 ### 🔹 Recommendation Service
