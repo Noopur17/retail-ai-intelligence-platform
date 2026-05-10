@@ -1,64 +1,41 @@
+````markdown
 # 🛒 Retail AI Intelligence Platform
 
-A production-inspired AI platform for retail intelligence, designed for large-scale commerce environments including grocery, electronics, fashion, and general merchandise.
+An enterprise-inspired AI platform for intelligent commerce systems, semantic retail search, recommendation workflows, and Retrieval-Augmented Generation (RAG).
+
+Designed to demonstrate how modern AI systems can power large-scale retail ecosystems across grocery, electronics, fashion, home, and general merchandise commerce platforms.
 
 ---
 
-## 🚀 Why This Project Matters
+# 🚀 Vision
 
-Modern retail systems require more than isolated machine learning models.
+Modern commerce platforms require more than isolated machine learning models.
 
-They need intelligent platforms that can:
+They require intelligent systems capable of:
 
-- Understand customer behavior
-- Recommend relevant products
-- Generate high-quality product content
-- Retrieve retail knowledge intelligently
-- Provide actionable business insights
+- Understanding customer behavior
+- Delivering personalized recommendations
+- Generating AI-powered product content
+- Retrieving retail knowledge semantically
+- Assisting merchandising workflows
+- Powering intelligent commerce experiences
 
-This project demonstrates how AI can be applied across the entire retail lifecycle using scalable AI services and modern commerce workflows.
-
----
-
-# ✨ Key Features
-
-- Multi-service Retail AI platform
-- Recommendation workflows
-- OpenAI-powered content generation
-- Retail AI RAG assistant
-- Semantic retail search
-- ChromaDB vector database integration
-- Dockerized microservices architecture
-- React enterprise-style frontend
-- FastAPI backend services
-- Retail-focused AI workflows
+This project demonstrates how multiple AI services can work together inside a scalable Retail AI platform architecture.
 
 ---
 
-## 🚀 Quick Start (Docker)
+# ✨ Platform Highlights
 
-Run the full platform:
-
-```bash
-docker compose up --build
-```
-
-Open:
-
-- UI → http://localhost:5173
-- Recommendation API → http://localhost:8001/docs
-- Content Intelligence API → http://localhost:8002/docs
-- RAG Assistant API → http://localhost:8003/docs
-
----
-
-## 🐳 Docker Hub Images
-
-This platform is published as multiple Docker images:
-
-- Frontend: https://hub.docker.com/r/noopur17/retail-ai-frontend
-- Recommendation Service: https://hub.docker.com/r/noopur17/retail-recommendation-service
-- Content Intelligence Service: https://hub.docker.com/r/noopur17/retail-content-intelligence-service
+- 🧠 Retail AI RAG Assistant
+- 🤖 Recommendation Intelligence Engine
+- ✍️ AI-Powered Content Generation
+- 🔎 Semantic Commerce Search
+- 🗂️ ChromaDB Vector Database Integration
+- ⚡ OpenAI Embeddings & Retrieval
+- 🐳 Dockerized Microservices Platform
+- 🛍️ Retail Knowledge Base Workflows
+- 📊 Enterprise Retail Intelligence Architecture
+- 🚀 React + FastAPI Production-Inspired Stack
 
 ---
 
@@ -69,23 +46,30 @@ Retail AI Intelligence Platform
 │
 ├── Frontend (React + Vite)
 │
-├── Recommendation Service
+├── Recommendation Intelligence Service
 │   ├── Product similarity search
-│   ├── Retail recommendation workflows
-│   └── FastAPI microservice
+│   ├── Recommendation scoring
+│   ├── Category-aware discovery
+│   └── Retail recommendation workflows
 │
 ├── Content Intelligence Service
-│   ├── OpenAI-powered content generation
+│   ├── OpenAI-powered product content
 │   ├── SEO metadata generation
-│   └── Product merchandising workflows
+│   ├── Product merchandising workflows
+│   └── Retail content intelligence
 │
-└── Retail AI RAG Assistant Service
-    ├── Retail knowledge ingestion
-    ├── OpenAI embeddings
-    ├── ChromaDB vector storage
-    ├── Semantic retrieval
-    └── AI-powered retail Q&A
-```
+├── Retail AI RAG Assistant Service
+│   ├── Retail knowledge ingestion
+│   ├── OpenAI embeddings
+│   ├── ChromaDB vector storage
+│   ├── Semantic retrieval
+│   ├── AI-powered retail Q&A
+│   └── Commerce intelligence workflows
+│
+├── Customer Analytics Service (Planned)
+│
+└── Log Intelligence Service (Planned)
+````
 
 ---
 
@@ -94,9 +78,9 @@ Retail AI Intelligence Platform
 ```text
 Retail Knowledge Base
         ↓
-Document Loading
+Document Ingestion
         ↓
-Chunking
+Chunking Pipeline
         ↓
 OpenAI Embeddings
         ↓
@@ -104,202 +88,305 @@ ChromaDB Vector Store
         ↓
 Semantic Retrieval
         ↓
-OpenAI Answer Generation
+Context Injection
+        ↓
+LLM Response Generation
+        ↓
+Retail AI Assistant
 ```
 
 ---
 
-## 🔌 Services
+# 🔌 Platform Services
 
-| Service | Description | Port |
-|---|---|---|
-| Frontend | React enterprise dashboard | 5173 |
-| Recommendation Service | Retail recommendation workflows | 8001 |
+| Service                      | Description                           | Port |
+| ---------------------------- | ------------------------------------- | ---- |
+| Frontend Dashboard           | Enterprise retail AI interface        | 5173 |
+| Recommendation Service       | Recommendation intelligence workflows | 8001 |
 | Content Intelligence Service | AI-powered product content generation | 8002 |
-| RAG Assistant Service | Retail knowledge retrieval and AI Q&A | 8003 |
+| Retail AI RAG Assistant      | Semantic retail retrieval & AI Q&A    | 8003 |
 
 ---
 
-## 🧠 Core Modules
+# 🧩 Core AI Services
 
-### 🔹 Recommendation Service
+## 🛒 Recommendation Intelligence Service
 
-- Content-based recommendation engine
-- Similarity-based ranking
-- Category-aware filtering
-- Retail product discovery workflows
+AI-powered retail recommendation workflows for product discovery and similarity search.
 
-### 🔹 Content Intelligence Service
+### Features
 
-- OpenAI-powered product content generation
-- Product titles and descriptions
-- Bullet points and structured content
-- SEO metadata generation
-
-### 🔹 Retail AI RAG Assistant Service
-
-- Retail knowledge ingestion
-- OpenAI embeddings
-- ChromaDB vector search
-- Semantic retrieval
-- AI-generated retail answers
-- Retail merchandising intelligence
-
-### 🔹 Customer Analytics Service *(Planned)*
-
-- Customer segmentation
-- Behavioral insights
-- Retail engagement analysis
-
-### 🔹 Log Intelligence Service *(Planned)*
-
-- Operational intelligence
-- AI-assisted error analysis
-- Monitoring workflows
+* Product similarity scoring
+* Category-aware recommendations
+* Semantic recommendation workflows
+* Retail product discovery
+* Recommendation ranking engine
 
 ---
 
-## 🤖 AI Capabilities
+## ✍️ Content Intelligence Service
 
-- Recommendation systems
-- Semantic vector search
-- OpenAI embeddings
-- Retrieval-Augmented Generation (RAG)
-- AI-powered content generation
-- Retail intelligence workflows
-- Product discovery systems
+Generative AI workflows for retail product content and merchandising systems.
+
+### Features
+
+* AI-generated product titles
+* Product descriptions
+* SEO metadata generation
+* Bullet point generation
+* Merchandising content workflows
+* OpenAI-powered content systems
 
 ---
 
-## 🖼️ Demo Screenshots
+## 🧠 Retail AI RAG Assistant Service
 
-### 🛒 Retail AI Dashboard
+A Retrieval-Augmented Generation (RAG) service designed for intelligent commerce retrieval workflows.
+
+### Features
+
+* Retail knowledge ingestion
+* OpenAI embeddings
+* ChromaDB vector search
+* Semantic retrieval
+* AI-powered retail Q&A
+* Retail merchandising intelligence
+* Commerce knowledge workflows
+* RAG-ready retrieval pipelines
+
+---
+
+## 📊 Customer Analytics Service *(Planned)*
+
+Future customer intelligence workflows.
+
+### Planned Features
+
+* Customer segmentation
+* Behavioral intelligence
+* Engagement analysis
+* AI-powered customer insights
+* Retail analytics workflows
+
+---
+
+## ⚙️ Log Intelligence Service *(Planned)*
+
+Operational AI workflows for monitoring and intelligence systems.
+
+### Planned Features
+
+* AI-assisted log analysis
+* Operational intelligence
+* Intelligent monitoring workflows
+* Production issue insights
+
+---
+
+# 🤖 AI Capabilities
+
+This platform explores practical AI applications for modern commerce systems.
+
+## Supported Workflows
+
+* Retrieval-Augmented Generation (RAG)
+* Recommendation systems
+* Semantic vector search
+* AI-powered content generation
+* Retail intelligence workflows
+* Product discovery systems
+* Semantic commerce retrieval
+* AI merchandising assistants
+* OpenAI embedding pipelines
+
+---
+
+# 📊 Retail AI Knowledge Base Dataset
+
+This platform is connected with the Kaggle dataset:
+
+## 🧠 Retail AI Intelligence Knowledge Base
+
+A large-scale AI-ready dataset designed for:
+
+* Semantic retrieval
+* Recommendation systems
+* RAG workflows
+* Retail AI assistants
+* Commerce intelligence systems
+
+### Dataset Features
+
+* 100K+ retail intelligence records
+* Multi-category retail coverage
+* AI use case mappings
+* Semantic retrieval tags
+* Merchandising strategies
+* Customer segment intelligence
+
+---
+
+# 📓 Premium Kaggle Notebook
+
+The project also includes a premium Kaggle notebook focused on:
+
+* RAG workflows
+* Semantic retrieval
+* Retail AI intelligence
+* Recommendation analysis
+* Commerce AI insights
+* AI-ready dataset engineering
+
+---
+
+# 🐳 Dockerized Architecture
+
+Run the entire platform locally using Docker Compose.
+
+## Start Platform
+
+```bash
+docker compose up --build
+```
+
+---
+
+## Service URLs
+
+| Service                  | URL                                                      |
+| ------------------------ | -------------------------------------------------------- |
+| Frontend Dashboard       | [http://localhost:5173](http://localhost:5173)           |
+| Recommendation API       | [http://localhost:8001/docs](http://localhost:8001/docs) |
+| Content Intelligence API | [http://localhost:8002/docs](http://localhost:8002/docs) |
+| Retail AI RAG API        | [http://localhost:8003/docs](http://localhost:8003/docs) |
+
+---
+
+# 🐳 Docker Hub Images
+
+## Frontend
+
+```text
+https://hub.docker.com/r/noopur17/retail-ai-frontend
+```
+
+## Recommendation Service
+
+```text
+https://hub.docker.com/r/noopur17/retail-recommendation-service
+```
+
+## Content Intelligence Service
+
+```text
+https://hub.docker.com/r/noopur17/retail-content-intelligence-service
+```
+
+---
+
+# 🖼️ Demo Screenshots
+
+## 🛒 Retail AI Dashboard
 
 ![Dashboard](docs/screenshots/dashboard.png)
 
 ---
 
-### 🤖 AI Recommendation Engine
+## 🤖 Recommendation Intelligence
 
 ![Recommendations](docs/screenshots/recommendations.png)
 
 ---
 
-### 🧠 Content Intelligence Service
-
-AI-generated retail product content with titles, descriptions, bullet points, and SEO metadata.
+## ✍️ Content Intelligence
 
 ![Content AI](docs/screenshots/content-ai.png)
 
 ---
 
-### 🧠 Retail AI RAG Assistant
-
-Semantic retail knowledge retrieval and AI-powered question answering.
+## 🧠 Retail AI RAG Assistant
 
 ![RAG Assistant](docs/screenshots/rag-assistant.png)
 
 ---
 
-### ⚙️ Backend API (Swagger)
+## ⚙️ FastAPI Swagger APIs
 
 ![Swagger](docs/screenshots/swagger.png)
 
 ---
 
-## 🛠️ Tech Stack
+# 🛠️ Tech Stack
 
-### Frontend
-- React
-- Vite
-- JavaScript
+## Frontend
 
-### Backend
-- FastAPI
-- Python
-- REST APIs
+* React
+* Vite
+* JavaScript
 
-### AI / ML
-- OpenAI
-- ChromaDB
-- Scikit-learn
-- Pandas
-- Vector Embeddings
+## Backend
 
-### Infrastructure
-- Docker
-- Docker Compose
-- Docker Hub
+* FastAPI
+* Python
+* REST APIs
 
-### Domain Focus
-- Retail AI
-- Commerce Intelligence
-- Product Discovery
-- AI-powered Content Systems
+## AI / ML
+
+* OpenAI
+* ChromaDB
+* Scikit-learn
+* Pandas
+* Vector Embeddings
+
+## Infrastructure
+
+* Docker
+* Docker Compose
+* Docker Hub
 
 ---
 
-## 📊 Dataset Connection
-
-This platform is designed for multi-category retail systems including:
-
-- Grocery
-- Electronics
-- Fashion
-- Home
-- General Merchandise
-
-### Current Data Sources
-
-- Retail product catalog datasets
-- Retail knowledge base documents
-- AI-generated merchandising workflows
-
-### Supported Retail Intelligence Features
-
-- Product similarity search
-- Recommendation scoring
-- AI-generated product content
-- Semantic retail knowledge retrieval
-- AI-assisted merchandising workflows
-
----
-
-## 📂 Project Structure
+# 📂 Project Structure
 
 ```text
 retail-ai-intelligence-platform/
+│
 ├── docs/
 │   └── screenshots/
+│
 ├── frontend/
+│
 ├── services/
 │   ├── recommendation-service/
 │   ├── content-intelligence-service/
 │   ├── rag-assistant-service/
 │   ├── customer-analytics-service/
 │   └── log-intelligence-service/
+│
 ├── datasets/
+│
 ├── notebooks/
+│
 └── docker-compose.yml
 ```
 
 ---
 
-## 🔌 API Documentation
+# 🔌 API Documentation
 
-### Recommendation Service
+## Recommendation Service
 
 ```text
 http://localhost:8001/docs
 ```
 
-### Content Intelligence Service
+## Content Intelligence Service
 
 ```text
 http://localhost:8002/docs
 ```
 
-### Retail AI RAG Assistant Service
+## Retail AI RAG Assistant Service
 
 ```text
 http://localhost:8003/docs
@@ -307,23 +394,27 @@ http://localhost:8003/docs
 
 ---
 
-## 🧪 Local Development
+# 🧪 Local Development
 
-### Recommendation Service
+## Recommendation Service
 
 ```bash
 cd services/recommendation-service
-uvicorn app.main:app --reload --port 8001
+python -m uvicorn app.main:app --reload --port 8001
 ```
 
-### Content Intelligence Service
+---
+
+## Content Intelligence Service
 
 ```bash
 cd services/content-intelligence-service
-uvicorn app.main:app --reload --port 8002
+python -m uvicorn app.main:app --reload --port 8002
 ```
 
-### RAG Assistant Service
+---
+
+## Retail AI RAG Assistant Service
 
 ```bash
 cd services/rag-assistant-service
@@ -338,62 +429,88 @@ export OPENAI_API_KEY="your_api_key_here"
 python -m uvicorn app.main:app --reload --port 8003
 ```
 
-### Frontend
+---
+
+## Frontend
 
 ```bash
 cd frontend/frontend
+
 npm install
 npm run dev
 ```
 
 ---
 
-## 🔬 Research & Engineering Alignment
+# 🔬 Research & Engineering Areas
 
-This platform explores practical applications of:
+This project explores practical applications of:
 
-- Retail recommendation systems
-- AI-powered content generation
-- Retrieval-Augmented Generation (RAG)
-- Semantic search systems
-- Retail intelligence workflows
-- Scalable AI platform engineering
-
----
-
-## 🛣️ Roadmap
-
-- [x] Recommendation Engine API
-- [x] Content Intelligence Service
-- [x] OpenAI Integration
-- [x] Retail AI RAG Assistant
-- [x] ChromaDB Vector Search
-- [x] Dockerized Full Platform
-- [x] Enterprise-style React Dashboard
-- [ ] Frontend RAG Assistant Integration
-- [ ] Customer Analytics Service
-- [ ] Kaggle Dataset Integration
-- [ ] Customer Review Ingestion
-- [ ] Retail Analytics Dashboard
-- [ ] Conversation Memory
-- [ ] End-to-End Retail AI Simulation
+* Recommendation systems
+* Retrieval-Augmented Generation (RAG)
+* Semantic search systems
+* Retail intelligence workflows
+* Commerce AI systems
+* Generative AI applications
+* Intelligent retrieval pipelines
+* Enterprise AI platform engineering
 
 ---
 
-## 👩‍💻 Author
+# 🛣️ Platform Roadmap
 
-**Noopur Bhatt**
+## Completed
+
+* [x] Recommendation Intelligence API
+* [x] Content Intelligence Service
+* [x] OpenAI Integration
+* [x] Retail AI RAG Assistant
+* [x] ChromaDB Vector Search
+* [x] Dockerized Platform
+* [x] Enterprise-style React Dashboard
+* [x] Kaggle Retail AI Dataset
+* [x] Premium Kaggle Notebook
+
+---
+
+## Planned
+
+* [ ] Frontend RAG Chat Integration
+* [ ] Customer Analytics Service
+* [ ] Customer Review Ingestion
+* [ ] Retail Analytics Dashboard
+* [ ] Conversation Memory
+* [ ] AI Shopping Assistant
+* [ ] Recommendation Feedback Loop
+* [ ] End-to-End Retail AI Simulation
+
+---
+
+# 👩‍💻 Author
+
+## Noopur Bhatt
 
 AI & Full-Stack Engineer focused on:
 
-- Retail AI Systems
-- Recommendation Workflows
-- Generative AI Applications
-- Intelligent Commerce Platforms
-- Scalable AI Services
+* Retail AI Systems
+* Retrieval-Augmented Generation (RAG)
+* Recommendation Workflows
+* Generative AI Applications
+* Intelligent Commerce Platforms
+* Semantic Retrieval Systems
+* Scalable AI Services
 
 ---
 
-## ⭐ Future Vision
+# ⭐ Future Vision
 
-This platform aims to evolve into a production-inspired Retail AI ecosystem demonstrating how recommendation systems, generative AI, semantic retrieval, and intelligent commerce workflows can work together in modern retail platforms.
+The long-term vision of this project is to evolve into a production-inspired Retail AI ecosystem demonstrating how:
+
+* recommendation systems,
+* generative AI,
+* semantic retrieval,
+* vector search,
+* intelligent merchandising,
+* and commerce AI workflows
+
+can work together inside modern enterprise retail platforms.
