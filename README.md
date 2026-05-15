@@ -353,7 +353,7 @@ https://hub.docker.com/r/noopur17/retail-content-intelligence-service
 
 ## 🤖 Recommendation Intelligence
 
-![Recommendations](docs/screenshots/recommendations.png)
+![Recommendations](docs/screenshots/recommendation.png)
 
 ---
 
