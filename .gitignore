@@ -26,3 +26,17 @@ frontend/dist/
 
 # Logs
 *.log
+
+# Vector DB
+app/vector_db/
+
+# CSV datasets
+app/data/csv/*.csv
+
+# Python
+venv/
+__pycache__/
+*.pyc
+
+# macOS
+.DS_Store

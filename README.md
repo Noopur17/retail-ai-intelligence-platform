@@ -1,9 +1,16 @@
-````markdown
 # 🛒 Retail AI Intelligence Platform
 
 An enterprise-inspired AI platform for intelligent commerce systems, semantic retail search, recommendation workflows, and Retrieval-Augmented Generation (RAG).
 
 Designed to demonstrate how modern AI systems can power large-scale retail ecosystems across grocery, electronics, fashion, home, and general merchandise commerce platforms.
+
+![Python](https://img.shields.io/badge/Python-3.11-blue)
+![FastAPI](https://img.shields.io/badge/FastAPI-Microservices-green)
+![React](https://img.shields.io/badge/React-Frontend-61DAFB)
+![OpenAI](https://img.shields.io/badge/OpenAI-RAG-orange)
+![ChromaDB](https://img.shields.io/badge/ChromaDB-Vector_Search-purple)
+![Docker](https://img.shields.io/badge/Docker-Containerized-2496ED)
+![Retail AI](https://img.shields.io/badge/Domain-Retail_AI-black)
 
 ---
 
@@ -39,7 +46,59 @@ This project demonstrates how multiple AI services can work together inside a sc
 
 ---
 
+# 📚 Documentation
+
+| Document | Description |
+|---|---|
+| [Platform Architecture](docs/architecture/platform-architecture.md) | High-level Retail AI platform architecture |
+| [RAG Architecture](docs/architecture/rag-architecture.md) | Semantic retrieval and vector search workflows |
+| [Service Architecture](docs/architecture/service-architecture.md) | FastAPI microservice interactions |
+| [Dataset Documentation](docs/datasets/retail-ai-knowledge-base.md) | Retail AI dataset design and schema |
+| [Local Development](docs/setup/local-development.md) | Local setup and development workflow |
+| [Roadmap](docs/roadmap.md) | Future platform direction |
+| [Research Alignment](docs/research-alignment.md) | AI engineering and research areas |
+
+---
+
 # 🏗️ Platform Architecture
+
+## Visual Architecture Diagram
+
+```mermaid
+flowchart TB
+    UI[React + Vite Frontend Dashboard]
+
+    UI --> REC[Recommendation Service<br/>FastAPI :8001]
+    UI --> CONTENT[Content Intelligence Service<br/>FastAPI :8002]
+    UI --> RAG[Retail AI RAG Assistant<br/>FastAPI :8003]
+
+    REC --> PRODUCT[(Retail Product Catalog Dataset)]
+    CONTENT --> OPENAI[OpenAI API]
+    RAG --> CSV[(Retail AI Knowledge Base CSV)]
+    RAG --> CHROMA[(ChromaDB Vector Store)]
+    RAG --> OPENAI
+
+    CSV --> INGEST[CSV Ingestion Pipeline]
+    INGEST --> CHUNK[Chunking]
+    CHUNK --> EMBED[OpenAI Embeddings]
+    EMBED --> CHROMA
+    CHROMA --> RETRIEVE[Semantic Retrieval]
+    RETRIEVE --> ANSWER[AI Retail Answer Generation]
+    ANSWER --> UI
+
+    subgraph Services[FastAPI Microservices]
+        REC
+        CONTENT
+        RAG
+    end
+
+    subgraph DataLayer[AI and Data Layer]
+        OPENAI
+        CHROMA
+        PRODUCT
+        CSV
+    end
+```
 
 ```text
 Retail AI Intelligence Platform

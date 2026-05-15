@@ -4,3 +4,5 @@ __pycache__/
 
 app/vector_db/
 .env
+
+app/data/csv/*.csv
