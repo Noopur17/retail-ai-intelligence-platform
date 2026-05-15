@@ -30,7 +30,7 @@ const CATEGORY_OPTIONS = {
       "fast charging",
     ],
   },
-  Groceries: {
+  Grocery: {
     brands: ["FreshFarm", "DailyHarvest", "NatureBasket", "GoodPantry"],
     products: [
       "Organic Whole Grain Cereal",
@@ -58,20 +58,6 @@ const CATEGORY_OPTIONS = {
       "everyday comfort",
     ],
   },
-  Fashion: {
-    brands: ["StyleHub", "UrbanMode", "ClassicWear", "TrendLine"],
-    products: [
-      "Everyday Casual Jacket",
-      "Slim Fit Denim Jeans",
-      "Soft Cotton Crewneck T-Shirt",
-    ],
-    features: [
-      "comfortable fit",
-      "soft fabric",
-      "versatile styling",
-      "machine washable",
-    ],
-  },
 };
 
 function App() {
@@ -93,9 +79,13 @@ function App() {
   });
 
   const [generatedContent, setGeneratedContent] = useState(null);
-  const [bulkContent, setBulkContent] = useState([]);
-  const [bulkLoading, setBulkLoading] = useState(false);
   const [loadingContent, setLoadingContent] = useState(false);
+
+  const [assistantQuestion, setAssistantQuestion] = useState(
+    "What retail AI capabilities improve product discovery?"
+  );
+  const [assistantResponse, setAssistantResponse] = useState(null);
+  const [assistantLoading, setAssistantLoading] = useState(false);
 
   const currentCategory = useMemo(
     () => CATEGORY_OPTIONS[contentForm.category] || CATEGORY_OPTIONS.Footwear,
@@ -118,7 +108,6 @@ function App() {
   };
 
   const fetchRecommendations = async () => {
-    if (!productId) return;
     setLoadingRecommendations(true);
 
     try {
@@ -128,7 +117,7 @@ function App() {
       const data = await res.json();
 
       setSourceProduct(data.source_product || null);
-      setResults(data.recommendations || []);
+      setResults(data.recommendations || data.products || []);
     } catch (err) {
       console.error("Recommendation API error:", err);
       setResults([]);
@@ -165,7 +154,7 @@ function App() {
       const data = await res.json();
       setGeneratedContent(data);
     } catch (err) {
-      console.error("Content Intelligence API error:", err);
+      console.error("Content API error:", err);
       setGeneratedContent(null);
     }
 
@@ -189,6 +178,34 @@ function App() {
     setGeneratedContent(null);
   };
 
+  const askAssistant = async () => {
+    if (!assistantQuestion.trim()) return;
+
+    setAssistantLoading(true);
+    setAssistantResponse(null);
+
+    try {
+      const res = await fetch("http://127.0.0.1:8003/assistant/ask", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          question: assistantQuestion,
+          top_k: 4,
+        }),
+      });
+
+      const data = await res.json();
+      setAssistantResponse(data);
+    } catch (err) {
+      console.error("RAG Assistant API error:", err);
+      setAssistantResponse(null);
+    }
+
+    setAssistantLoading(false);
+  };
+
   return (
     <div className="layout">
       <aside className="sidebar">
@@ -208,12 +225,21 @@ function App() {
             >
               Recommendations
             </button>
+
             <button
               className={activeTab === "content" ? "active" : ""}
               onClick={() => setActiveTab("content")}
             >
               Content AI
             </button>
+
+            <button
+              className={activeTab === "assistant" ? "active" : ""}
+              onClick={() => setActiveTab("assistant")}
+            >
+              Retail AI Assistant
+            </button>
+
             <button disabled>Customer Analytics</button>
             <button disabled>Operations</button>
           </nav>
@@ -221,7 +247,7 @@ function App() {
 
         <div className="sidebarFooter">
           <p>Platform Status</p>
-          <strong>2 AI Services Live</strong>
+          <strong>3 AI Services Live</strong>
         </div>
       </aside>
 
@@ -232,21 +258,20 @@ function App() {
             <h1>Retail AI Intelligence Platform</h1>
             <p>
               A multi-service dashboard for recommendations, AI-generated
-              product content, and scalable retail decision workflows across
-              commerce categories.
+              product content, and RAG-powered retail knowledge workflows.
             </p>
           </div>
 
           <div className="heroBadge">
             <span>Architecture</span>
-            <strong>React + FastAPI</strong>
+            <strong>React + FastAPI + OpenAI</strong>
           </div>
         </header>
 
         <section className="metrics">
           <div className="metricCard">
             <span>Live Services</span>
-            <strong>2</strong>
+            <strong>3</strong>
           </div>
           <div className="metricCard">
             <span>Recommendation API</span>
@@ -257,8 +282,8 @@ function App() {
             <strong>Active</strong>
           </div>
           <div className="metricCard">
-            <span>Retail Scope</span>
-            <strong>Multi-Category</strong>
+            <span>RAG Assistant</span>
+            <strong>Active</strong>
           </div>
         </section>
 
@@ -283,7 +308,6 @@ function App() {
             <div className="searchBox">
               <input
                 type="number"
-                placeholder="Enter Product ID"
                 value={productId}
                 onChange={(e) => setProductId(e.target.value)}
               />
@@ -312,22 +336,17 @@ function App() {
             </div>
 
             <div className="results">
-              {results.length === 0 && !loadingRecommendations && (
-                <div className="emptyState">
-                  <h3>No recommendations loaded yet</h3>
-                  <p>Enter a product ID and run the recommendation engine.</p>
-                </div>
-              )}
-
-              {results.map((item) => (
-                <article className="productCard" key={item.product_id}>
+              {results.map((item, index) => (
+                <article className="productCard" key={item.product_id || index}>
                   <div className="cardTop">
                     <div>
-                      <span className="rank">Rank #{item.rank}</span>
+                      <span className="rank">Rank #{item.rank || index + 1}</span>
                       <h3>{item.product_name}</h3>
                     </div>
                     <span className="score">
-                      {(item.similarity_score * 100).toFixed(1)}%
+                      {item.similarity_score
+                        ? `${(item.similarity_score * 100).toFixed(1)}%`
+                        : "AI"}
                     </span>
                   </div>
 
@@ -374,14 +393,6 @@ function App() {
               </a>
             </div>
 
-            <div className="enterpriseNotice">
-              <strong>Retail Catalog Workspace</strong>
-              <p>
-                Select a category, brand, product, generation mode, and tone to
-                generate structured merchandising content.
-              </p>
-            </div>
-
             <div className="contentGrid">
               <div className="contentForm">
                 <label>Generation Mode</label>
@@ -391,8 +402,8 @@ function App() {
                     setContentForm({ ...contentForm, mode: e.target.value })
                   }
                 >
-                  <option value="template">Template Mode - Fast / Free</option>
-                  <option value="ai">AI Mode - OpenAI Powered</option>
+                  <option value="template">Template Mode</option>
+                  <option value="ai">AI Mode</option>
                 </select>
 
                 <label>Tone</label>
@@ -455,19 +466,14 @@ function App() {
                 {!generatedContent && (
                   <div className="emptyState compact">
                     <h3>No content generated yet</h3>
-                    <p>
-                      Select retail attributes and generate structured product
-                      content.
-                    </p>
+                    <p>Select retail attributes and generate structured content.</p>
                   </div>
                 )}
 
                 {generatedContent && (
                   <>
                     <div className="generatedBlock primary">
-                      <span>
-                        Generated Title • Mode: {generatedContent.mode_used}
-                      </span>
+                      <span>Mode: {generatedContent.mode_used}</span>
                       <h3>{generatedContent.title}</h3>
                     </div>
 
@@ -496,6 +502,118 @@ function App() {
                         <strong>{generatedContent.seo_title}</strong>
                       </p>
                       <p>{generatedContent.seo_description}</p>
+                    </div>
+                  </>
+                )}
+              </div>
+            </div>
+          </section>
+        )}
+
+        {activeTab === "assistant" && (
+          <section className="panel">
+            <div className="panelHeader">
+              <div>
+                <p className="eyebrow">Retail AI RAG Assistant</p>
+                <h2>Ask retail intelligence questions</h2>
+              </div>
+
+              <a
+                href="http://127.0.0.1:8003/docs"
+                target="_blank"
+                rel="noreferrer"
+                className="swaggerLink"
+              >
+                Open RAG Swagger
+              </a>
+            </div>
+
+            <div className="assistantGrid">
+              <div className="assistantQuestionCard">
+                <label>Ask a Retail AI Question</label>
+                <textarea
+                  value={assistantQuestion}
+                  onChange={(e) => setAssistantQuestion(e.target.value)}
+                  placeholder="Ask about product discovery, recommendations, merchandising, semantic search..."
+                />
+
+                <button onClick={askAssistant} disabled={assistantLoading}>
+                  {assistantLoading ? "Thinking..." : "Ask Assistant"}
+                </button>
+
+                <div className="suggestionBox">
+                  <p>Try asking:</p>
+                  <button
+                    onClick={() =>
+                      setAssistantQuestion(
+                        "What merchandising opportunities exist for electronics products?"
+                      )
+                    }
+                  >
+                    Electronics merchandising opportunities
+                  </button>
+                  <button
+                    onClick={() =>
+                      setAssistantQuestion(
+                        "How can RAG improve retail AI assistants?"
+                      )
+                    }
+                  >
+                    RAG for retail assistants
+                  </button>
+                  <button
+                    onClick={() =>
+                      setAssistantQuestion(
+                        "What retail AI capabilities improve product discovery?"
+                      )
+                    }
+                  >
+                    Product discovery AI
+                  </button>
+                </div>
+              </div>
+
+              <div className="assistantResponseCard">
+                {!assistantResponse && (
+                  <div className="emptyState compact">
+                    <h3>No answer yet</h3>
+                    <p>
+                      Ask a retail intelligence question to retrieve context and
+                      generate an AI answer.
+                    </p>
+                  </div>
+                )}
+
+                {assistantResponse && (
+                  <>
+                    <div className="generatedBlock primary">
+                      <span>
+                        {assistantResponse.mode} • Confidence:{" "}
+                        {assistantResponse.confidence}
+                      </span>
+                      <h3>AI Answer</h3>
+                      <p>{assistantResponse.answer}</p>
+                    </div>
+
+                    <div className="generatedBlock">
+                      <span>Business Use Case</span>
+                      <p>{assistantResponse.business_use_case}</p>
+                    </div>
+
+                    <div className="generatedBlock">
+                      <span>Retrieved Context</span>
+                      {assistantResponse.retrieved_context?.map(
+                        (ctx, index) => (
+                          <div className="contextCard" key={index}>
+                            <strong>{ctx.source}</strong>
+                            <p>{ctx.content}</p>
+                            <small>
+                              Chunk: {ctx.chunk_id} • Score:{" "}
+                              {ctx.similarity_score}
+                            </small>
+                          </div>
+                        )
+                      )}
                     </div>
                   </>
                 )}

@@ -578,3 +578,88 @@ nav button:disabled {
 .contentActionButton:hover {
   background: #dbeafe;
 }
+.assistantGrid {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.assistantQuestionCard,
+.assistantResponseCard {
+  background: #f8fafc;
+  border: 1px solid #dbe4ef;
+  border-radius: 24px;
+  padding: 24px;
+}
+
+.assistantQuestionCard label {
+  display: block;
+  font-weight: 800;
+  margin-bottom: 10px;
+  color: #0f172a;
+}
+
+.assistantQuestionCard textarea {
+  width: 100%;
+  min-height: 180px;
+  border-radius: 18px;
+  border: 1px solid #cbd5e1;
+  padding: 16px;
+  font-size: 15px;
+  resize: vertical;
+  margin-bottom: 16px;
+}
+
+.suggestionBox {
+  margin-top: 22px;
+  display: grid;
+  gap: 10px;
+}
+
+.suggestionBox p {
+  margin: 0;
+  font-weight: 800;
+  color: #64748b;
+}
+
+.suggestionBox button {
+  background: #eff6ff;
+  color: #1d4ed8;
+  border: 1px solid #bfdbfe;
+  border-radius: 14px;
+  padding: 11px 14px;
+  font-weight: 800;
+  cursor: pointer;
+  text-align: left;
+}
+
+.contextCard {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 16px;
+  margin-top: 12px;
+}
+
+.contextCard strong {
+  display: block;
+  margin-bottom: 8px;
+  color: #0f172a;
+}
+
+.contextCard p {
+  color: #475569;
+  margin-bottom: 10px;
+}
+
+.contextCard small {
+  color: #64748b;
+  font-weight: 700;
+}
+
+@media (max-width: 900px) {
+  .assistantGrid {
+    grid-template-columns: 1fr;
+  }
+}
